@@ -35,19 +35,71 @@
 
     <!-- Bootstrap 5.3.3 JS Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   </head>
   <body>
-    <!-- ======================================================= -->
-    <!-- >>>>>>>>>> ZONA DE TRABAJO: INTEGRANTE 1 <<<<<<<<<<<<<< -->
-    <!-- Rama: dev/integrante-1                                  -->
-    <!-- ======================================================= -->
-
-    <!-- PASO 2: NAVBAR RESPONSIVO HÍBRIDO -->
+    <!-- PASO 2: NAVBAR RESPONSIVO -->
     <header>
-      <nav>
+      <nav
+        class="navbar navbar-expand-lg navbar-light bg-white/90 backdrop-blur-md shadow-lg py-3 sticky-top"
+      >
         <div class="container">
-          <!-- Integrante 1: Maquetar aquí los elementos del Navbar -->
+          <a class="navbar-brand fw-bold fs-4 text-emerald-700" href="#hero">
+            <i class="bi bi-heart-fill text-rose-500 me-2" aria-hidden="true"></i>Huellitas
+          </a>
+
+          <button
+            class="navbar-toggler border-0"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarHuellitas"
+            aria-controls="navbarHuellitas"
+            aria-expanded="false"
+            aria-label="Abrir menú de navegación"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarHuellitas">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+              <li class="nav-item"><a class="nav-link" href="#hero">Inicio</a></li>
+
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="serviciosDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Servicios
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                  <li><a class="dropdown-item" href="#servicios">Baño y corte</a></li>
+                  <li><a class="dropdown-item" href="#servicios">Consulta veterinaria</a></li>
+                  <li><a class="dropdown-item" href="#servicios">Guardería</a></li>
+                </ul>
+              </li>
+
+              <li class="nav-item"><a class="nav-link" href="#productos">Adopción</a></li>
+              <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+
+              <li class="nav-item ms-lg-3">
+                <a
+                  href="#contacto"
+                  class="btn btn-sm bg-emerald-700 text-white hover:bg-emerald-800 transition-colors position-relative"
+                >
+                  Agendar cita
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-rose-500"
+                  >
+                    Nuevo
+                    <span class="visually-hidden">servicio nuevo disponible</span>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
