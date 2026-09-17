@@ -97,9 +97,57 @@
       <!-- PASO 5: FORMULARIO ACCESIBLE CON VALIDACIÓN UI -->
       <section id="contacto">
         <div class="container">
-          <form>
-            <!-- Integrante 2: Maquetar aquí los inputs, labels y botones -->
-          </form>
+          <form class="needs-validation row g-3" novalidate>
+  <h2 class="h4 fw-bold w-100">Reserva tu cita</h2>
+
+  <!-- Nombre -->
+  <div class="col-md-6">
+    <label for="nombre" class="form-label">Nombre completo</label>
+    <input type="text" class="form-control" id="nombre" name="nombre" required aria-describedby="nombreError">
+    <div id="nombreError" class="invalid-feedback">Por favor ingresa tu nombre.</div>
+  </div>
+
+  <!-- Correo -->
+  <div class="col-md-6">
+    <label for="correo" class="form-label">Correo electrónico</label>
+    <input type="email" class="form-control" id="correo" name="correo" required aria-describedby="correoError">
+    <div id="correoError" class="invalid-feedback">Ingresa un correo válido.</div>
+  </div>
+
+  <!-- Tipo de mascota -->
+  <div class="col-md-6">
+    <label for="mascota" class="form-label">Tipo de mascota</label>
+    <select class="form-select" id="mascota" name="mascota" required aria-describedby="mascotaError">
+      <option value="" selected disabled>Selecciona una opción</option>
+      <option value="perro">Perro</option>
+      <option value="gato">Gato</option>
+      <option value="otro">Otro</option>
+    </select>
+    <div id="mascotaError" class="invalid-feedback">Selecciona el tipo de mascota.</div>
+  </div>
+
+  <!-- Servicio -->
+  <div class="col-md-6">
+    <label for="servicio" class="form-label">Servicio</label>
+    <select class="form-select" id="servicio" name="servicio" required aria-describedby="servicioError">
+      <option value="" selected disabled>Selecciona un servicio</option>
+      <option value="veterinaria">Veterinaria</option>
+      <option value="grooming">Grooming</option>
+      <option value="guarderia">Guardería</option>
+    </select>
+    <div id="servicioError" class="invalid-feedback">Selecciona un servicio.</div>
+  </div>
+
+  <!-- Mensaje -->
+  <div class="col-12">
+    <label for="mensaje" class="form-label">Mensaje (opcional)</label>
+    <textarea class="form-control" id="mensaje" name="mensaje" rows="3"></textarea>
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary px-4">Enviar reserva</button>
+  </div>
+</form>
         </div>
       </section>
     </main>
@@ -114,5 +162,20 @@
         <!-- Opcional / Cierre común -->
       </div>
     </footer>
+    <script>
+  (() => {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+</script>
   </body>
 </html>
